@@ -1,0 +1,15 @@
+.perez_body{
+    background-color: #4a4e69;
+    color: #96bbbb;
+    text-align: center;
+}
+
+.perez_pic {
+    width:128px;
+    margin: 10px;
+    border:2px solid #22223B;
+    border-radius: 500px;
+    vertical-align: middle;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+}
