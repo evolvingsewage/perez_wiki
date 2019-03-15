@@ -4,6 +4,16 @@
     text-align: center;
 }
 
+.perez_heading{
+    text-decoration: none;
+    color: inherit;
+}
+
+.perez_heading:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
 .perez_pic {
     width:128px;
     margin: 10px;
