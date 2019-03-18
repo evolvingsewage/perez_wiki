@@ -1,17 +1,32 @@
-.perez_body{
-    background-color: #002171;
+.perez_body {
+    background-color: #5472d3;
     color: #ffffff;
     text-align: center;
 }
 
-.perez_heading{
+.perez_built_with{
+    margin-bottom: -10px;
+}
+
+.perez_header {
+    color: #ffffff;
+    background-color: #002171;
+    margin-top: -20px;
+}
+
+.perez_heading {
+    text-decoration: none;
+}
+
+.perez_heading:hover {
     text-decoration: none;
     color: inherit;
 }
 
-.perez_heading:hover{
-    text-decoration: none;
-    color: inherit;
+.perez_logo {
+    width: 64px;
+    length: 64px;
+    margin: 15px;
 }
 
 .perez_pic {

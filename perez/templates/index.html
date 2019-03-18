@@ -4,11 +4,22 @@
     {% include "header.html" %}
 </head>
 
+
 <body class=perez_body>
+    {% include "body_header.html" %}
     <div class="container">
-
-        {% include "body_header.html" %}
-
+        <br>
+        <p>Welcome to perez wiki. Use the above links to navigate the website.</p>
+        <p>Click on my face to get back here!</p>
+        <br>
+        <br>
+        <p class="perez_built_with"><b>Built with:</b></p>
+        <img class="perez_logo"
+             src="{{ url_for("static", filename="img/flask.png") }}"></img>
+        <img class="perez_logo"
+             src="{{ url_for("static", filename="img/jinja-small.png") }}"></img>
+         <img class="perez_logo"
+              src="{{ url_for("static", filename="img/gunicorn.png") }}"></img>
     </div>
 </body>
 
