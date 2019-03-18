@@ -16,7 +16,8 @@ def create_app():
         pass
 
     # apply the blueprints to the app
-    from perez import index
+    from perez import index, resume
     app.register_blueprint(index.bp)
+    app.register_blueprint(resume.bp)
 
     return app

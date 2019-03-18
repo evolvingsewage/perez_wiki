@@ -1,6 +1,6 @@
 .perez_body{
-    background-color: #4a4e69;
-    color: #96bbbb;
+    background-color: #002171;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -17,7 +17,7 @@
 .perez_pic {
     width:128px;
     margin: 10px;
-    border:2px solid #22223B;
+    border:2px solid #ff5131;
     border-radius: 500px;
     vertical-align: middle;
     -webkit-border-radius: 500px;
