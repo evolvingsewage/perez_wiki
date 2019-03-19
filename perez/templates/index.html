@@ -9,29 +9,35 @@
     {% include "body_header.html" %}
     <div class="container">
         <br>
-        <p>Welcome to the perez wiki. Use the above links to access information about me.</p>
-        <p>Click on my face to get back here!</p>
-        <br>
-        <br>
+        <h6>Welcome to the perez wiki. Use the above links to access information about me.</h6>
+        <h6><i>Click on my face to get back here!</i></h6>
+        <hr class="perez_hr">
         <p class="perez_built_with"><b>This website was built with:</b></p>
-        <a href="http://flask.pocoo.org">
+        <a href="http://flask.pocoo.org" target="_blank">
             <img class="perez_logo"
                  src="{{ url_for("static", filename="img/flask.png") }}">
             </img>
         </a>
-        <a href="http://jinja.pocoo.org">
+        <a href="http://jinja.pocoo.org" target="_blank">
             <img class="perez_logo"
                  src="{{ url_for("static", filename="img/jinja.png") }}">
             </img>
         </a>
-        <a href="https://gunicorn.org">
+        <a href="https://gunicorn.org" target="_blank">
             <img class="perez_logo"
                  src="{{ url_for("static", filename="img/gunicorn.png") }}">
             </img>
         </a>
-        <a href="https://nginx.com">
+        <a href="https://nginx.com" target="_blank">
             <img class="perez_logo"
                  src="{{ url_for("static", filename="img/nginx.png") }}">
+            </img>
+        </a>
+        <hr class="perez_hr">
+        <p class="perez_built_with"><b>This website is hosted by:</b></p>
+        <a href="https://digitalocean.com" target="_blank">
+            <img class="perez_logo"
+                 src="{{ url_for("static", filename="img/digital_ocean.png") }}">
             </img>
         </a>
     </div>

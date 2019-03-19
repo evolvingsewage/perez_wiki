@@ -8,17 +8,18 @@
     {% include "body_header.html" %}
     <div class="container">
         <br>
-        <p>Below is a pdf version of my resume. Right click on the document to download it directly.</p>
+        <h5>Below is a pdf version of my resume. Right click on the document to download it directly.</h5>
+        <hr class="perez_hr">
         <object width="800" height="600"
                 data="{{ url_for("static", filename="pdf/Resume.pdf") }}?#zoom=85&scrollbar=0&toolbar=0&navpanes=0">
         </object>
         <br>
-        <i>If you cannot see the pdf, download it
+        <h5>If you cannot see the pdf, download it
             <a
                   href="{{ url_for("static", filename="pdf/Resume.pdf") }}">
                   here.
             </q>
-        </i>
+        </h5>
     </div>
 </body>
 

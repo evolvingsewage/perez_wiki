@@ -1,3 +1,13 @@
+a, a:link, a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff5131 !important;
+    text-decoration: none;
+}
+
 .perez_body {
     background-color: #5472d3;
     color: #ffffff;
@@ -23,10 +33,15 @@
     color: inherit;
 }
 
+.perez_hr{
+    border-color: #9b0000;
+}
+
 .perez_logo {
     width: 64px;
     length: 64px;
     margin: 15px;
+    vertical-align: middle;
 }
 
 .perez_pic {
