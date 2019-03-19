@@ -13,7 +13,7 @@ MODE="production"
 while getopts ":d" o; do
     case "${o}" in
         d)
-            MODE="production"
+            MODE="development"
             ;;
         *)
             usage
@@ -31,9 +31,13 @@ shift $((OPTIND-1))
 #   None
 start_perez() {
     source venv/bin/activate
-    export FLASK_ENV="${MODE}"
-    export FLASK_APP="perez"
-    gunicorn -w 4 --bind 0.0.0.0:8000 "perez:create_app()"
+    if [[ "${MODE}" == "development" ]]; then
+        export FLASK_ENV="${MODE}"
+        export FLASK_APP="perez"
+        flask run
+    else
+        gunicorn -w 4 --bind 0.0.0.0:8000 "perez:create_app()"
+    fi
 }
 
 start_perez

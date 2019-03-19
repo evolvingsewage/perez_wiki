@@ -9,11 +9,11 @@
     {% include "body_header.html" %}
     <div class="container">
         <br>
-        <p>Welcome to perez wiki. Use the above links to navigate the website.</p>
+        <p>Welcome to the perez wiki. Use the above links to access information about me.</p>
         <p>Click on my face to get back here!</p>
         <br>
         <br>
-        <p class="perez_built_with"><b>Built with:</b></p>
+        <p class="perez_built_with"><b>This website was built with:</b></p>
         <a href="http://flask.pocoo.org">
             <img class="perez_logo"
                  src="{{ url_for("static", filename="img/flask.png") }}">
@@ -21,12 +21,17 @@
         </a>
         <a href="http://jinja.pocoo.org">
             <img class="perez_logo"
-                 src="{{ url_for("static", filename="img/jinja-small.png") }}">
+                 src="{{ url_for("static", filename="img/jinja.png") }}">
             </img>
         </a>
         <a href="https://gunicorn.org">
             <img class="perez_logo"
                  src="{{ url_for("static", filename="img/gunicorn.png") }}">
+            </img>
+        </a>
+        <a href="https://nginx.com">
+            <img class="perez_logo"
+                 src="{{ url_for("static", filename="img/nginx.png") }}">
             </img>
         </a>
     </div>
