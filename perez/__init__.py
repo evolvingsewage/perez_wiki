@@ -16,7 +16,7 @@ def create_app():
         pass
 
     # apply the blueprints to the app
-    from perez import about, contact, index, projects, resume
+    import about, contact, index, projects, resume
     app.register_blueprint(about.bp)
     app.register_blueprint(contact.bp)
     app.register_blueprint(index.bp)
@@ -24,3 +24,7 @@ def create_app():
     app.register_blueprint(resume.bp)
 
     return app
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run(host='0.0.0.0')
