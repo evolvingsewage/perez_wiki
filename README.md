@@ -4,17 +4,18 @@ A Flask Server on gunicorn and nginx running my personal website.
 Go to [my website](perez.wiki) to see it in action.
 
 # Requirements
-A GNU/Linux based operating system (Debian 10, Ubuntu 20, Arch Linux 2020, etc)
+* A GNU/Linux based operating system (Debian 10, Ubuntu 20, Arch Linux 2020, etc)
   * sudo privileges on the target machine
-Python3.7 
-VirtualEnv
-python3-pip 
-python3-dev 
-build-essential 
-libssl-dev 
-libffi-dev 
-python3-setuptools
-Nginx
+* Python3.7 
+* VirtualEnv
+* python3-pip 
+* python3-dev 
+* build-essential 
+* libssl-dev 
+* libffi-dev 
+* python3-setuptools
+* NGINX
+* certbot
 
 # Installation Instructions
 
