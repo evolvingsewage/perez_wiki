@@ -114,7 +114,7 @@ is likely the source of your pain. This [stack overflow question][wsgi_so]
 was illuminating and may help you. 
    
 # References
-I used this [Digital Ocean article on Flask/Gunicorn/NGINX]DO_FGN] to build 
+I used this [Digital Ocean article on Flask/Gunicorn/NGINX[DO_FGN] to build 
 this webserver.
   
 [DO_DNS]: <https://www.digitalocean.com/docs/networking/dns/>
