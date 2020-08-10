@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to server perez.wiki
+After=network.target
+
+[Service]
+User=user
+Group=www-data
+WorkingDirectory=/home/user/perez_wiki/
+Environment=PATH="/home/user/perez_wiki/venv/bin"
+ExecStart=/home/user/perez_wiki/venv/bin/gunicorn --workers 4 --bind unix:perez_wiki.sock -m 007 wsgi:gunicorn_app
+
+[Install]
+WantedBy=multi-user.target
