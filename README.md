@@ -1,6 +1,6 @@
 # perez.wiki
 A Flask Server on gunicorn and nginx running my personal website.
-
+Needs to be updated
 Go to [my website](https://www.perez.wiki) to see it in action.
 
 # Requirements
