@@ -4,6 +4,6 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/home/user/perez_wiki/perez_wiki.sock;
+        proxy_pass http://unix:/home/perez-wiki/perez_wiki/perez_wiki.sock;
     }
 }

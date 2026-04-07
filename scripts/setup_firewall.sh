@@ -1,43 +1,56 @@
 #!/bin/bash
 # setup_firewall.sh
-# Run once as root on the Linode server to configure UFW.
-# Opens HTTP/HTTPS to all, SSH only to GitHub Actions runner IPs.
+# Run once as root on the Linode server to configure nftables.
+# Opens HTTP/HTTPS to all. SSH open to all (enforce key-only auth separately).
 
 set -euo pipefail
 
-GH_IPS_FILE="/etc/ufw/github_actions_ips.txt"
+NFT_CONF="/etc/nftables/perez_wiki.nft"
 
-command -v ufw >/dev/null 2>&1 || apt-get install -y ufw
 command -v curl >/dev/null 2>&1 || apt-get install -y curl
-command -v python3 >/dev/null 2>&1 || apt-get install -y python3
 
-ufw --force reset
+mkdir -p /etc/nftables
 
-ufw default deny incoming
-ufw default allow outgoing
+cat > "$NFT_CONF" << 'EOF'
+#!/usr/sbin/nft -f
 
-# Web traffic
-ufw allow 80/tcp
-ufw allow 443/tcp
+flush ruleset
 
-# Fetch GitHub Actions runner IPs and allow SSH from each
-echo "Fetching GitHub Actions IP ranges..."
-GH_IPS=$(curl -sf https://api.github.com/meta | python3 -c "
-import sys, json
-meta = json.load(sys.stdin)
-for ip in meta['actions']:
-    print(ip)
-")
+table inet filter {
+    chain input {
+        type filter hook input priority 0; policy drop;
 
-echo "$GH_IPS" > "$GH_IPS_FILE"
+        # Allow established/related connections
+        ct state established,related accept
 
-while IFS= read -r ip; do
-    ufw allow from "$ip" to any port 22 proto tcp
-done <<< "$GH_IPS"
+        # Allow loopback
+        iif lo accept
 
-ufw --force enable
-ufw status verbose
+        # Allow HTTP and HTTPS
+        tcp dport { 80, 443 } accept
+    }
+
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+    }
+
+    chain output {
+        type filter hook output priority 0; policy accept;
+    }
+}
+EOF
+
+# Load the ruleset
+nft -f "$NFT_CONF"
+
+# Persist across reboots
+if ! grep -q "perez_wiki.nft" /etc/nftables.conf 2>/dev/null; then
+    echo "include \"/etc/nftables/perez_wiki.nft\"" >> /etc/nftables.conf
+fi
+systemctl enable nftables
+systemctl restart nftables
 
 echo ""
-echo "Done. Allowed $(wc -l < "$GH_IPS_FILE") GitHub Actions CIDR ranges on port 22."
-echo "Run scripts/update_gh_ips.sh weekly (or via cron) to keep IPs current."
+nft list ruleset
+echo ""
+echo "Done. SSH is closed — use the Linode LISH console for direct server access."
