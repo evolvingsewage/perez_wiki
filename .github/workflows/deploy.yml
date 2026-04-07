@@ -1,0 +1,24 @@
+name: Deploy to Linode
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pull latest code
+        run: |
+          cd /home/perez-wiki/perez_wiki
+          git pull origin main
+
+      - name: Install dependencies
+        run: |
+          cd /home/perez-wiki/perez_wiki
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Restart service
+        run: sudo systemctl restart perez_wiki
