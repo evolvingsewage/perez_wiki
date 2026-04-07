@@ -10,10 +10,7 @@ def create_app():
     )
 
     # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
+    os.makedirs(app.instance_path, exist_ok=True)
 
     # apply the blueprints to the app
     from perez import about, contact, index, projects, resume
