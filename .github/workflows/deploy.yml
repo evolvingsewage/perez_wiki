@@ -20,5 +20,10 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Update nginx config
+        run: |
+          sudo cp /home/perez-wiki/perez_wiki/files/perez_wiki /etc/nginx/sites-available/perez_wiki
+          sudo systemctl reload nginx
+
       - name: Restart service
         run: sudo systemctl restart perez_wiki

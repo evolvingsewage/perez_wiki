@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name your_domain www.your_domain;
+    server_name perez.wiki www.perez.wiki;
 
     location / {
         include proxy_params;
