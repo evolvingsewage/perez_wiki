@@ -58,11 +58,31 @@ a:hover {
     border-top: 1px solid #002171;
 }
 
-.perez_footer .button {
-    font-size: 0.75rem;
-    padding: 0 12px;
-    height: 28px;
-    line-height: 28px;
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    background-color: #002171;
+    border-radius: 20px;
+    padding: 4px 12px;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.lang-active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.lang-divider {
+    color: #5472d3;
+}
+
+.lang-inactive {
+    color: #aaaaaa !important;
+}
+
+.lang-inactive:hover {
+    color: #ff5131 !important;
 }
 
 .perez_pic {
