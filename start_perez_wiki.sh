@@ -3,7 +3,7 @@
 # Description: Starts the Perez Wiki Website with gunicorn
 
 usage() {
-    echo -e "Usage: ./{0} [-d]"
+    echo -e "Usage: ./$0 [-d]"
     echo -e "  -d       Development Mode - use this to avoid using gunicorn"
     echo -e "               DO NOT DO THIS IN PRODUCTION ENVIRONMENTS"
 }
@@ -32,11 +32,11 @@ shift $((OPTIND-1))
 start_perez() {
     source venv/bin/activate
     if [[ "${MODE}" == "development" ]]; then
-        export FLASK_ENV="${MODE}"
+        export FLASK_DEBUG=1
         export FLASK_APP="perez"
         flask run
     else
-        gunicorn -w 4 --bind 0.0.0.0:8000 "perez:create_app()"
+        gunicorn --workers 4 --bind unix:perez_wiki.sock -m 007 wsgi:gunicorn_app
     fi
 }
 
