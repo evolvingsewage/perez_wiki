@@ -159,7 +159,7 @@ from nftables on the server. You will need to open ports 80 and 443 there as wel
 or the traffic will never reach the server.
 
 # References
-I used this [Digital Ocean article on Flask/Gunicorn/NGINX][DO_FGN] to build
+I used this [Digital Ocean article on Flask/Gunicorn/NGINX][DO_FGN] in part to build
 this webserver.
 
 [DO_FGN]: <https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04#step-1-%E2%80%94-installing-the-components-from-the-ubuntu-repositories>
