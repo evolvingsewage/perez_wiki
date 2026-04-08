@@ -85,6 +85,23 @@ a:hover {
     color: #ff5131 !important;
 }
 
+.pdf-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 600px;
+}
+
+@media (max-width: 550px) {
+    .pdf-viewer {
+        height: 400px;
+    }
+}
+
 .perez_pic {
     width:128px;
     margin: 10px;
