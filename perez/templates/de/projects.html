@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    {% include "header.html" %}
+</head>
+
+<body class=perez_body>
+    {% include "body_header_de.html" %}
+    <div class="container">
+        <br>
+        <h5>Hier sind alle meine persönlichen und akademischen Projekte.</h5>
+        <hr class="perez_hr">
+        <a href="https://github.com/cperez941/Parallel-Image-Processing"
+           target="_blank">
+            <img class="perez_logo"
+                 src="{{ url_for("static", filename="img/tensorflow.png") }}">
+            </img>
+            <b>BCIC</b> - ein verteilter TensorFlow-basierter Bildprozessor
+        </a>
+        <br>
+        <a href="https://github.com/cperez941/CyberVision"
+           target="_blank">
+            <img class="perez_logo"
+                 src="{{ url_for("static", filename="img/matlab.png") }}">
+            <b>CyberVision</b> - ein MatLab/Python Bildmischer und Bewegungsmelder
+            </img>
+        </a>
+        <br>
+        <a href="https://github.com/cperez941/perez_wiki"
+           target="_blank">
+            <img class="perez_logo"
+                 src="{{ url_for("static", filename="img/favicon.ico") }}">
+            </img>
+            <b>perez.wiki</b> - diese Website!
+        </a>
+    </div>
+</body>
+
+</html>

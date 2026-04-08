@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    {% include "header.html" %}
+</head>
+
+<body class=perez_body>
+    {% include "body_header_de.html" %}
+    <div class="container">
+        <br>
+        <h5><i>Ich bin Perez.</i></h5>
+        <hr class="perez_hr">
+        <p>Ich bin Computeringenieur, Imker und Gärtner.
+         Ich betreibe seit 10 Jahren Imkerei und Gartenbau und bin seit 10 Jahren Ingenieur.
+         Mein Hauptgebiet im Ingenieurwesen ist DevOps, das sich hauptsächlich mit der
+         Erstellung und Pflege der Infrastruktur für den Softwareentwicklungszyklus befasst.
+         Stell dir die Softwareentwicklung als einen Bienenstock vor, und die Bienen als
+         Softwareingenieure. Bienen produzieren Honig, benötigen dafür aber die richtige Umgebung.
+         Imker sind die DevOps-Ingenieure der Bienen. Wir sorgen für die richtige Umgebung
+         für die Produktion.
+        </p>
+        <hr class="perez_hr">
+        <div class="row">
+            <div class="four columns">
+                <h5 style="margin-bottom: 1rem;">Hobbys</h5>
+            </div>
+            <div class="eight columns">
+                <h5>Lieblingsmedien</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <ul>
+                    <li>Imkerei</li>
+                    <li>Gartenarbeit</li>
+                    <li>Kochen</li>
+                    <li>Automatisierung</li>
+                    <li>Politikwissenschaft/-theorie</li>
+                    <li>Fahrzeugreparatur</li>
+                </ul>
+            </div>
+
+            <div class="four columns">
+                <h6 style="margin-bottom: 1rem;">Filme</h6>
+                <ul>
+                    <li>
+                        <img class="perez_logo"
+                             src="{{ url_for("static", filename="img/mononoke.png") }}">
+                        </img>
+                        Prinzessin Mononoke</li>
+                    <li><img class="perez_logo"
+                             src="{{ url_for("static", filename="img/downfall.png") }}">
+                        </img>
+                        Der Untergang</li>
+                    <li><img class="perez_logo"
+                             src="{{ url_for("static", filename="img/littleprince.png") }}">
+                        Der kleine Prinz</li>
+                </ul>
+            </div>
+            <div class="four columns">
+                <h6 style="margin-bottom: 1rem;">Musik</h6>
+                    <ul>
+                        <li><img class="perez_logo"
+                                 src="{{ url_for("static", filename="img/twy.png") }}">
+                            The Wonder Years</li>
+                        <li><img class="perez_logo"
+                                 src="{{ url_for("static", filename="img/wccompose.png") }}">
+                            Masakatsu Takagi</li>
+                        <li><img class="perez_logo"
+                                 src="{{ url_for("static", filename="img/japanese_house.png") }}">
+                            The Japanese House</li>
+                        <li><img class="perez_logo"
+                                 src="{{ url_for("static", filename="img/tyler_childers.png") }}">
+                            Tyler Childers</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

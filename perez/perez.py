@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, request
 
 def create_app():
     """Create and configure an instance of the Flask application."""
@@ -13,12 +13,22 @@ def create_app():
     os.makedirs(app.instance_path, exist_ok=True)
 
     # apply the blueprints to the app
-    from perez import about, contact, index, projects, resume
+    from perez import about, contact, index, projects, resume, de
     app.register_blueprint(about.bp)
     app.register_blueprint(contact.bp)
     app.register_blueprint(index.bp)
     app.register_blueprint(projects.bp)
     app.register_blueprint(resume.bp)
+    app.register_blueprint(de.bp)
+
+    @app.context_processor
+    def inject_toggle_url():
+        path = request.path
+        if path.startswith('/de'):
+            toggle_url = path[3:] or '/'
+        else:
+            toggle_url = '/de' + path
+        return dict(toggle_url=toggle_url)
 
     return app
 

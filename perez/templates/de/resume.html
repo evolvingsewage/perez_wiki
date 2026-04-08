@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    {% include "header.html" %}
+</head>
+
+<body class=perez_body>
+    {% include "body_header_de.html" %}
+    <div class="container">
+        <br>
+        <h5>Unten ist eine PDF-Version meines Lebenslaufs. Rechtsklick auf das Dokument, um es direkt herunterzuladen.</h5>
+        <hr class="perez_hr">
+        <object width="800" height="600"
+                data="{{ url_for("static", filename="pdf/Resume.pdf") }}?#zoom=85&scrollbar=0&toolbar=0&navpanes=0">
+        </object>
+        <br>
+        <h5>Falls die PDF nicht angezeigt wird, lade sie
+            <a href="{{ url_for("static", filename="pdf/Resume.pdf") }}">
+                hier
+            </a>
+            herunter.
+        </h5>
+    </div>
+</body>
+
+</html>
