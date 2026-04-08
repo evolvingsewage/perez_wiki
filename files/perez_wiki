@@ -1,6 +1,15 @@
 server {
     listen 80;
     server_name perez.wiki www.perez.wiki;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name perez.wiki www.perez.wiki;
+
+    ssl_certificate /etc/letsencrypt/live/perez.wiki/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/perez.wiki/privkey.pem;
 
     location / {
         include proxy_params;
