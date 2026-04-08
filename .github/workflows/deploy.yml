@@ -25,5 +25,10 @@ jobs:
           sudo cp /home/perez-wiki/perez_wiki/files/perez_wiki /etc/nginx/sites-available/perez_wiki
           sudo systemctl reload nginx
 
+      - name: Update service file
+        run: |
+          sudo cp /home/perez-wiki/perez_wiki/files/perez_wiki.service /etc/systemd/system/perez_wiki.service
+          sudo systemctl daemon-reload
+
       - name: Restart service
         run: sudo systemctl restart perez_wiki
