@@ -51,6 +51,20 @@ a:hover {
     vertical-align: middle;
 }
 
+.perez_footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #002171;
+}
+
+.perez_footer .button {
+    font-size: 0.75rem;
+    padding: 0 12px;
+    height: 28px;
+    line-height: 28px;
+}
+
 .perez_pic {
     width:128px;
     margin: 10px;
