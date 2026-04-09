@@ -97,6 +97,27 @@ a:hover {
 }
 
 @media (max-width: 550px) {
+    .perez_pic {
+        width: 72px;
+    }
+
+    .perez_header .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .perez_header .three.columns {
+        width: auto;
+        float: none;
+    }
+
+    .perez_header .button {
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 550px) {
     .pdf-container {
         height: 430px;
         overflow: hidden;
