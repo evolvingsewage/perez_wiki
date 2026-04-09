@@ -105,6 +105,7 @@ a:hover {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 8px;
     }
 
     .perez_header .three.columns {
