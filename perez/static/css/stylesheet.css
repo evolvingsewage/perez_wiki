@@ -105,6 +105,9 @@ a:hover {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .perez_header_en .row {
         gap: 8px;
     }
 
