@@ -98,7 +98,8 @@ a:hover {
 
 @media (max-width: 550px) {
     .perez_pic {
-        width: 72px;
+        width: 1.3em;
+        height: 1.3em;
     }
 
     .perez_header .row {
@@ -137,11 +138,11 @@ a:hover {
 }
 
 .perez_pic {
-    width:128px;
+    width: 1.3em;
+    height: 1.3em;
+    object-fit: cover;
     margin: 10px;
     border:2px solid #ff5131;
-    border-radius: 500px;
+    border-radius: 50%;
     vertical-align: middle;
-    -webkit-border-radius: 500px;
-    -moz-border-radius: 500px;
 }
