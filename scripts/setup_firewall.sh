@@ -26,8 +26,8 @@ table inet filter {
         # Allow loopback
         iif lo accept
 
-        # Allow HTTP and HTTPS
-        tcp dport { 80, 443 } accept
+        # Allow HTTP and HTTPS and SSH
+        tcp dport { 22, 80, 443 } accept
     }
 
     chain forward {
