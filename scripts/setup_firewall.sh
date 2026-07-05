@@ -52,4 +52,4 @@ systemctl restart nftables
 echo ""
 nft list ruleset
 echo ""
-echo "Done. SSH is closed — use the Linode LISH console for direct server access."
+echo "Done. SSH is closed, use LISH for access."

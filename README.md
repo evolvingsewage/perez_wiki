@@ -17,7 +17,7 @@ Go to [my website](https://www.perez.wiki) to see it in action.
 * certbot
 * python3-certbot-nginx
 
-# Users
+# Users 
 This project uses two service accounts to separate deployment from runtime:
 
 * **perez-wiki** — owns the app files and runs the gunicorn service
@@ -32,7 +32,7 @@ usermod -aG perez-wiki www-data
 
 # Firewall
 This project uses nftables. The included `scripts/setup_firewall.sh` will configure
-it for you. It opens ports 80 and 443 and drops everything else.
+it for you. It opens ports 22, 80, and 443 and drops everything else.
 
 # Deployment
 Deployments are handled automatically via a GitHub Actions self-hosted runner.
@@ -155,7 +155,7 @@ is likely the source of your pain. This [stack overflow question][wsgi_so]
 was illuminating and may help you.
 
 If you are hosting on Linode, note that Linode has its own Cloud Firewall separate
-from nftables on the server. You will need to open ports 80 and 443 there as well,
+from nftables on the server. You will need to open ports there as well,
 or the traffic will never reach the server.
 
 # References
