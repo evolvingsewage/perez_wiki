@@ -1,0 +1,14 @@
+name: Deploy via Jenkins (manual)
+
+# Manual-only for now,  Change  `on:` to `push: branches: [main]` when ready
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-jenkins:
+    uses: evolvingsewage/infra_perez_wiki/.github/workflows/deploy-jenkins-only.yml@main
+    secrets:
+      LINODE_SSH_PRIVATE_KEY: ${{ secrets.LINODE_SSH_PRIVATE_KEY }}
+      JENKINS_ADMIN_PASSWORD: ${{ secrets.JENKINS_ADMIN_PASSWORD }}
+      EXPORTER_BASIC_AUTH_HASH: ${{ secrets.EXPORTER_BASIC_AUTH_HASH }}
+      ADMIN_CIDR: ${{ secrets.ADMIN_CIDR }}
