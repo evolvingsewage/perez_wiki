@@ -53,6 +53,9 @@ github-runner ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
 Any push to `main` will automatically pull the latest code, install dependencies,
 update the nginx and service configurations, and restart the app.
 
+You can also deploy this manually, using my Jenkins pipeline. See the GitHub
+Action at `.github/workflows/deploy-jenkins.yml` and [infra_perez_wiki][infra]
+
 # Installation Instructions
 
 *This website is set up to run with gunicorn and nginx in mind, these
@@ -158,11 +161,17 @@ If you are hosting on Linode, note that Linode has its own Cloud Firewall separa
 from nftables on the server. You will need to open ports there as well,
 or the traffic will never reach the server.
 
+If you are troubleshooting the Jenkins deployment.... good luck. That's its
+own can of worms. You'll need to first make sure the AWS connection is solid,
+then check Jenkins logs, then start troubleshooting terraform. The Jenkins logs
+will be the most illuminating.
+
 # References
 I used this [Digital Ocean article on Flask/Gunicorn/NGINX][DO_FGN] in part to build
 this webserver.
 
 [DO_FGN]: <https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04#step-1-%E2%80%94-installing-the-components-from-the-ubuntu-repositories>
+[infra]: <https://github.com/evolvingsewage/infra_perez_wiki>
 [LE]: <https://certbot.eff.org/instructions>
 [sha3sum]: <https://manpages.debian.org/unstable/libdigest-sha3-perl/sha3sum.1p.en.html>
 [wsgi_so]: <https://stackoverflow.com/questions/33379287/gunicorn-cant-find-app-when-name-changed-from-application/33379650>
