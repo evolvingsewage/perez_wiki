@@ -1,7 +1,6 @@
 #!/bin/bash
 # setup_firewall.sh
 # Run once as root on the Linode server to configure nftables.
-# Opens HTTP/HTTPS to all. SSH open to all (enforce key-only auth separately).
 
 set -euo pipefail
 
