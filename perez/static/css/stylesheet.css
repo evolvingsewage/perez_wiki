@@ -51,6 +51,27 @@ a:hover {
     vertical-align: middle;
 }
 
+.projects_list {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 22px 0;
+}
+
+.project .perez_logo {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin: 0;
+}
+
 .perez_footer {
     margin-top: 40px;
     padding: 20px 0;

@@ -10,47 +10,28 @@
         <br>
         <h5>Below are all my personal and academic projects.</h5>
         <hr class="perez_hr">
-        <a href="https://github.com/cperez941/perez_wiki"
-           target="_blank">
-            <img class="perez_logo"
-                 src="{{ url_for("static", filename="img/favicon.ico") }}">
-            </img>
-            <b>perez.wiki</b> - this website! a basic website built on Flask and deployed with GitHub Actions.
-        </a>
-        <br>
-        <a href="https://github.com/evolvingsewage/infra_perez_wiki"
-           target="_blank">
-            <img class="perez_logo"
-                 src="{{ url_for("static", filename="img/terraform.png") }}">
-            </img>
-            <b>infra_perez_wiki</b> - a cloud infrastructure demonstration that can deploy this website. 
-            Deploys Jenkins to an AWS cluster, and deploys Grafana to an Azure cluster, and sets up 
-            a deployment pipeline for this website. Demos available upon request.
-        </a>
-        <br>
-        <a href="https://github.com/evolvingsewage/find_a_flood"
-           target="_blank">
-            <img class="perez_logo"
-                 src="{{ url_for("static", filename="img/findaflood.png") }}">
-            </img>
-            <b>find_a_flood</b> - a Python CLI that finds potentially flooding rivers near you with NOAA river-gauge data
-        </a>
-        <br>
-        <a href="https://github.com/cperez941/Parallel-Image-Processing"
-           target="_blank">
-            <img class="perez_logo"
-                 src="{{ url_for("static", filename="img/tensorflow.png") }}">
-            </img>
-            <b>BCIC</b> - a distributed TensorFlow-based Image Processor
-        </a>
-        <br>
-        <a href="https://github.com/cperez941/CyberVision"
-           target="_blank">
-            <img class="perez_logo"
-                 src="{{ url_for("static", filename="img/matlab.png") }}">
-            <b>CyberVision</b> - a MatLab/Python Image Blender and Motion Detector
-            </img>
-        </a>
+        <div class="projects_list">
+            <a class="project" href="https://github.com/cperez941/perez_wiki" target="_blank">
+                <img class="perez_logo" src="{{ url_for("static", filename="img/favicon.ico") }}">
+                <span><b>perez.wiki</b> - this website! a basic website built on Flask and deployed with GitHub Actions.</span>
+            </a>
+            <a class="project" href="https://github.com/evolvingsewage/infra_perez_wiki" target="_blank">
+                <img class="perez_logo" src="{{ url_for("static", filename="img/terraform.png") }}">
+                <span><b>infra_perez_wiki</b> - a cloud infrastructure demonstration that can deploy this website. Deploys Jenkins to an AWS cluster, and deploys Grafana to an Azure cluster, and sets up a deployment pipeline for this website. Demos available upon request.</span>
+            </a>
+            <a class="project" href="https://github.com/evolvingsewage/find_a_flood" target="_blank">
+                <img class="perez_logo" src="{{ url_for("static", filename="img/findaflood.png") }}">
+                <span><b>find_a_flood</b> - a Python CLI that finds potentially flooding rivers near you with NOAA river-gauge data</span>
+            </a>
+            <a class="project" href="https://github.com/cperez941/Parallel-Image-Processing" target="_blank">
+                <img class="perez_logo" src="{{ url_for("static", filename="img/tensorflow.png") }}">
+                <span><b>BCIC</b> - a distributed TensorFlow-based Image Processor</span>
+            </a>
+            <a class="project" href="https://github.com/cperez941/CyberVision" target="_blank">
+                <img class="perez_logo" src="{{ url_for("static", filename="img/matlab.png") }}">
+                <span><b>CyberVision</b> - a MatLab/Python Image Blender and Motion Detector</span>
+            </a>
+        </div>
     </div>
     {% include "footer.html" %}
 </body>
