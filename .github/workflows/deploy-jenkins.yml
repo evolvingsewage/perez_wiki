@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy-jenkins:
-    uses: evolvingsewage/infra_perez_wiki/.github/workflows/deploy-jenkins.yml@main
+    uses: isa-p941/infra_perez_wiki/.github/workflows/deploy-jenkins.yml@main
     secrets:
       LINODE_SSH_PRIVATE_KEY: ${{ secrets.LINODE_SSH_PRIVATE_KEY }}
       JENKINS_ADMIN_PASSWORD: ${{ secrets.JENKINS_ADMIN_PASSWORD }}

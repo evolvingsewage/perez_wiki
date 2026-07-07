@@ -171,7 +171,7 @@ I used this [Digital Ocean article on Flask/Gunicorn/NGINX][DO_FGN] in part to b
 this webserver.
 
 [DO_FGN]: <https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04#step-1-%E2%80%94-installing-the-components-from-the-ubuntu-repositories>
-[infra]: <https://github.com/evolvingsewage/infra_perez_wiki>
+[infra]: <https://github.com/isa-p941/infra_perez_wiki>
 [LE]: <https://certbot.eff.org/instructions>
 [sha3sum]: <https://manpages.debian.org/unstable/libdigest-sha3-perl/sha3sum.1p.en.html>
 [wsgi_so]: <https://stackoverflow.com/questions/33379287/gunicorn-cant-find-app-when-name-changed-from-application/33379650>

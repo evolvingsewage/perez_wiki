@@ -6,7 +6,7 @@
 #   GitHub repo → Settings → Actions → Runners → New self-hosted runner
 #
 # Usage: bash setup_runner.sh <repo-url> <registration-token>
-#   e.g. bash setup_runner.sh https://github.com/evolvingsewage/perez_wiki AABBCC...
+#   e.g. bash setup_runner.sh https://github.com/isa-p941/perez_wiki AABBCC...
 
 set -euo pipefail
 
