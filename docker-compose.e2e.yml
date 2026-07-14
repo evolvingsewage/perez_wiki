@@ -1,0 +1,36 @@
+services:
+  app:
+    image: python:3.12-slim
+    working_dir: /app
+    volumes:
+      - .:/app:ro
+    command: >
+      sh -c "pip install --quiet -r requirements.txt &&
+             gunicorn --bind 0.0.0.0:5000 wsgi:gunicorn_app"
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:5000/')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  chrome:
+    image: selenium/standalone-chrome:4
+    shm_size: 2gb
+
+  tests:
+    image: python:3.12-slim
+    working_dir: /app
+    volumes:
+      - .:/app:ro
+    environment:
+      E2E_BASE_URL: ${E2E_BASE_URL:-http://app:5000}
+      SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
+    command: >
+      sh -c "pip install --quiet -r tests/e2e/requirements-test.txt &&
+             pytest -v tests/e2e"
+    depends_on:
+      app:
+        condition: service_healthy
+      chrome:
+        condition: service_started

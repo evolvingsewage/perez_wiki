@@ -139,6 +139,26 @@ Action at `.github/workflows/deploy-jenkins.yml` and [infra_perez_wiki][infra]
 
 10. Verify that the web server is up and secure.
 
+# Testing
+
+I run some selenium smoke tests for the things that live on my personal
+server.  
+
+Tests can be run on the live site with:
+
+```
+E2E_BASE_URL=https://perez.wiki docker compose -f docker-compose.e2e.yml up \
+  --no-deps --abort-on-container-exit --exit-code-from tests chrome tests
+```
+
+For local testing:
+```
+python -m venv venv && source venv/bin/activate
+pip install -r tests/e2e/requirements-test.txt
+# do this in another shell: gunicorn --bind 0.0.0.0:5000 wsgi:gunicorn_app
+E2E_BASE_URL=http://localhost:5000 pytest -v tests/e2e
+```
+
 # Troubleshooting
 Ensure relevant paths in the included configurations match. The `ExecStart`
 path in the service configuration will determine where the WebProxy Socket
