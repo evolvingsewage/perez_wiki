@@ -58,10 +58,6 @@ Action at `.github/workflows/deploy-jenkins.yml` and [infra_perez_wiki][infra]
 
 # Installation Instructions
 
-*This website is set up to run with gunicorn and nginx in mind, these
- instructions can be modified for any WSGI/Proxy compatible with Flask,
- but it is not guaranteed to work.*
-
 1. Clone this repository, and change your working directory to it.
 2. Export an environment variable named SECRET_KEY with your
    preferred hashed string. I used the [perl SHA3 module][sha3sum],
